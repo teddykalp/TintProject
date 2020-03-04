@@ -1,0 +1,11 @@
+{
+    "name": "tint-project",
+    "version": "0.0.1",
+    "description": "Team project",
+    "dependencies": {
+        "express": "^4.17.1",
+        "moment": "^2.24.0",
+        "passport": "^0.4.1",
+        "socket.io": "^2.3.0"
+    }
+}
