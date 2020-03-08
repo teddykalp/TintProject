@@ -1,0 +1,40 @@
+.user_label{
+    color:white;
+    padding-right: 5px;
+}
+
+.form_control{
+	margin-right: 5px;
+}
+
+#login{
+	color: #70CCFF;
+}
+
+#white_logo{
+	width: 30%;
+}
+
+.welcome_screen{
+	align-items: center;
+	text-align: center;
+	margin-top: 20%;
+}
+
+#navbar{
+	color: #70CCFF;
+}
+
+#signup:link{
+	text-decoration: none;
+	color:black;
+}
+
+#signup:hover{
+	text-decoration: underline;
+}
+
+#signup:visited{
+	text-decoration: none;
+}
+
