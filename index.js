@@ -15,7 +15,7 @@ var moment = require('moment');
 app.use(express.static('assets'));
 
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html'); // We can serve whatever file we want to here - just using index as an example
+    res.sendFile(__dirname + '/login.html'); // We can serve whatever file we want to here - just using index as an example
 });
 
 io.on('connection', function(socket) {
