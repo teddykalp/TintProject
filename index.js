@@ -18,6 +18,18 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/login.html'); // We can serve whatever file we want to here - just using index as an example
 });
 
+// Example of serving multiple files - on localhost:8080/testing url we instead serve the index.html instead of login.html
+// navigation to /testing can be done by setting an href with just /testing as the address <a href = "/testing">
+app.get('/testing', function(req, res){
+    res.sendFile(__dirname + '/index.html');
+});
+
+// On login success serve a home page
+app.get('/home', function(req, res){
+    res.sendFile(__dirname + '/index.html');
+});
+
+
 io.on('connection', function(socket) {
 	console.log('A user has connected with ID: ' + socket.id);
 	
