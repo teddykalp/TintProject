@@ -5,11 +5,14 @@
     "dependencies": {
         "body-parser": "^1.19.0",
         "express": "^4.17.1",
+        "jade": "^1.11.0",
         "moment": "^2.24.0",
         "passport": "^0.4.1",
         "passport-google-oauth": "^2.0.0",
         "passport-google-oauth2": "^0.2.0",
         "passport-google-oauth20": "^2.0.0",
-        "socket.io": "^2.3.0"
+        "socket.io": "^2.3.0",
+        "kerberos": "~0.0.17",
+        "mongodb": "~2.2.19"
     }
 }

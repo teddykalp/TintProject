@@ -8,9 +8,9 @@
     <body>
         
         <div>
-            <nav class="navbar navbar-dark bg-primary" id = "navbar">
+            <nav class="navbar navbar-custom" id = "navbar">
                 <span class="navbar-brand mb-0 h1"><img id="white_logo" src = "imgs/Tint_v2_white.png"></span>
-                <!-- <form class="form-inline">
+                <form class="form-inline">
                     <div class="form-group">
                       <label for="email" class = "user_label">Username</label>
                       <input type="email" class="form-control" id="username">
@@ -19,8 +19,9 @@
                       <label for="pwd" class = "user_label">Password</label>
                       <input type="password" class="form-control" id="pwd">
                     </div>
-                    <button type="submit" class="btn btn-light" id = "login">Submit</button>
-                  </form> -->
+                    <button type="submit" class="btn btn-light" id = "login">Login</button>
+                    <label for="error" class = "error">Incorrect Password</label>
+                  </form>
             </nav>
         </div>
 
@@ -28,13 +29,19 @@
        <div class = "welcome_screen">
             <img id = "main_logo" src = "imgs/Tint_v2.png">
             <h4>This is not Tinder - but we're pretty damn close</h4>
+            <br><br>
+            <h4>Don't have an account?</h4>
             <br>
-            <h5><a id = "signup" href = "/auth/google">Sign in with Google</h5>
+            <div id = "signup_block"> 
+            <h5><a class = "signup" href = "/signup">Sign up with Email</h5>
+            <h5><a class = "signup" href = "/auth/google">Sign up with Google</h5>
+            </div>
        </div>
         
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
     </body>
 </html>

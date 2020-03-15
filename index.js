@@ -14,22 +14,33 @@ var io = require('socket.io')(http);
 var moment = require('moment');
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+/*var mongo = require("mongodb");*/
 
-app.use(express.static('assets'));
+
+app.use(express.static(__dirname + '/assets'));
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/login.html'); // We can serve whatever file we want to here - just using index as an example
 });
 
 // Example of serving multiple files - on localhost:8080/testing url we instead serve the index.html instead of login.html
+
 // navigation to /testing can be done by setting an href with just /testing as the address <a href = "/testing">
 app.get('/testing', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/login', function(req,res){
+    res.sendFile(__dirname + '/login.html');
+});
+
 // On login success serve a home page
 app.get('/home', function(req, res){
     res.sendFile(__dirname + '/index.html');
+});
+
+app.get('/signup', function(req,res){
+  res.sendFile(__dirname + '/signup.html');
 });
 
 passport.use(new GoogleStrategy({
@@ -39,7 +50,7 @@ passport.use(new GoogleStrategy({
   },
   function(accessToken, refreshToken, profile, done) {
     console.log('callback time baby');
-	console.log(profile);
+	  console.log(profile);
 	return done(); // invoke done when the callback with passed in data is finished
 
 	// At this point we now have the logged in user data so now we would either write stuff to a database/in memory

@@ -1,6 +1,13 @@
+.navbar-custom { 
+       background-color: #70CCFF; 
+} 
 .user_label{
     color:white;
     padding-right: 5px;
+}
+
+.checkbox{
+	text-align: center;
 }
 
 .form_control{
@@ -18,11 +25,15 @@
 .welcome_screen{
 	align-items: center;
 	text-align: center;
-	margin-top: 20%;
+	margin-top: 10%;
 }
 
-#navbar{
-	color: #70CCFF;
+#signup_block{
+	background-color: #70CCFF;
+}
+
+.signup{
+	color: white;
 }
 
 #signup:link{
@@ -37,4 +48,28 @@
 #signup:visited{
 	text-decoration: none;
 }
+
+#employee{
+	display: none;
+	text-align: center;
+}
+
+#candidate{
+	display: none;
+	text-align: center;
+}
+
+#description{
+	height: 10vh;
+}
+
+.candidateUserinput{
+	width: 50%;
+}
+
+.employeeUserinput{
+	width: 50%;
+}
+
+
 

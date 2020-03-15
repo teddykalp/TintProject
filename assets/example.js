@@ -111,4 +111,19 @@ class coolTiltThing {
     }
   
 }
+
+$(function(){
+
+  $("#employeecheck").click(function(){
+    $('#employee').show();
+    $('#candidate').hide();
+  });
+
+  $("#candidatecheck").click(function(){
+    $('#candidate').show();
+    $('#employee').hide();
+  });
+
+});
+
   

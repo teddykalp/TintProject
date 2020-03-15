@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up for Tint</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+	<div>
+        <nav class="navbar navbar-custom" id = "navbar">
+            <a href = "/login"><span class="navbar-brand mb-0 h1"><img id="white_logo" src = "imgs/Tint_v2_white.png"></span></a>
+        </nav>
+    </div>
+    <br>
+	<div class="checkbox">
+		<h3> Are you looking or offering a job? </h3>
+        <label><input name = "usertype" type="radio" id = "candidatecheck">Potential Employee</label>
+        <label><input name = "usertype" type="radio"  id = "employeecheck">Employer</label>
+    </div>
+    <br><br>
+	<div id = "employee">
+		<form class="form-horizontal" >
+			<div class = "form-group">
+				<label class="control-label col-sm-2">Create a Username</label>
+				<input type="text" name="userName" class = "employeeUserinput" id = "userName">
+			</div>
+			<div class = "form-group">
+				<label class="control-label col-sm-2">Create a Password</label>
+				<input type="text" name="password" class = "employeeUserinput" id = "password">
+			</div>
+			<div class = "form-group">
+				<label class="control-label col-sm-2">Email</label>
+				<input type="text" name="email" class = "employeeUserinput" id = "email">
+			</div>
+			<div class = "form-group">
+				<label class="control-label col-sm-2">Company Name</label>
+				<input type="text" name="companyName" class = "employeeUserinput" id = "companyName">
+			</div>
+			<div class = "form-group">
+				<label class="control-label col-sm-2">Name of Position Offered</label>
+				<input type="text" name="position" class = "employeeUserinput" id = "position">
+			</div>
+			<div class = "form-group">
+				<label class="control-label col-sm-2">Job Description</label>
+				<textarea type="text" name="description" class =  "employeeUserinput" id = "description"></textarea>
+			</div>
+			<div class = "form-group">
+				<label class="control-label col-sm-2">Experience Required</label>
+				<textarea type="text" name="experience" class = "employeeUserinput" id = "experience"></textarea>
+			</div>
+			<label class="control-label col-sm-2">Upload Company Photo</label>
+			<input type="file"
+	       	id="profile" name="profile" class = "employeeUserinput">
+	       <br><br>
+			<button type="submit" class="btn btn-light" id = "login">Submit</button>
+		</form>
+	</div>
+
+	<div id = "candidate">
+		<form class="form-horizontal" >
+			<div class = "form-group">
+				<label class="control-label col-sm-2">Create a Username</label>
+				<input type="text" name="userName" class = "candidateUserinput" id = "userName">
+			</div>
+			<div class = "form-group">
+				<label class="control-label col-sm-2">Create a Password</label>
+				<input type="text" name="password" class = "candidateUserinput" id = "password">
+			</div>
+			<div class = "form-group">
+				<label class="control-label col-sm-2">Full Name</label>
+				<input type="text" name="fullname" class = "candidateUserinput" id = "fullname">
+			</div>
+			<div class = "form-group">
+				<label class="control-label col-sm-2">Email</label>
+				<input type="text" name="email" class = "candidateUserinput" id = "email">
+			</div>
+			<div class = "form-group">
+				<label class="control-label col-sm-2">Highest Education Level Completed</label>
+				<div>
+				<label class="control-label col-sm-3"><input name = "education" type="radio" id = "highschool" class = "education">High School Diploma</label><br>
+        		<label class="control-label col-sm-3"><input name = "education" type="radio"  id = "bachelor" class = "education">Bachelor's Degree</label><br>
+        		<label class="control-label col-sm-3"><input name = "education" type="radio" id = "masters" class = "education">Master's Degree</label><br>
+        		<label class="control-label col-sm-2"><input name = "education" type="radio"  id = "phd" class = "education">PhD. Degree</label><br>
+        		</div>
+			</div>
+			<div class = "form-group">
+				<label class="control-label col-sm-2">Tell us a little about yourself</label>
+				<textarea type="text" name="description" class =  "candidateUserinput" id = "description"></textarea>
+			</div>
+			<div class = "form-group">
+				<label class="control-label col-sm-2">Experience (Seperate points with ",")</label>
+				<textarea type="text" name="experience" class ="candidateUserinput" id = "experience"></textarea>
+			</div>
+			<label class="control-label col-sm-2">Upload Profile Picture</label>
+			<input type="file" id="profile" name="profile" class = "candidateUserinput">
+	       <br><br>
+	
+			<button type="submit" class="btn btn-light" id = "login">Submit</button>
+
+	</div>
+
+
+	 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+     <script src="/socket.io/socket.io.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+     <script type="text/javascript">
+     	$(function(){
+
+		$("#employeecheck").click(function(){
+			$('#employee').show();
+			$('#candidate').hide();
+		});
+
+	$("#candidatecheck").click(function(){
+		$('#candidate').show();
+		$('#employee').hide();
+		});
+
+	});
+
+     </script>
+</body>
+</html>
