@@ -14,13 +14,13 @@ var io = require('socket.io')(http);
 var moment = require('moment');
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-/*var mongo = require("mongodb");*/
+var PouchDB = require('pouchdb');
 
 
 app.use(express.static(__dirname + '/assets'));
 
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/login.html'); // We can serve whatever file we want to here - just using index as an example
+    res.sendFile(__dirname + '/login.html');
 });
 
 // Example of serving multiple files - on localhost:8080/testing url we instead serve the index.html instead of login.html
@@ -42,6 +42,8 @@ app.get('/home', function(req, res){
 app.get('/signup', function(req,res){
   res.sendFile(__dirname + '/signup.html');
 });
+
+
 
 passport.use(new GoogleStrategy({
     clientID: '623488379336-4qr8e0qrcpu8ibfafl1a5g8mpv8mnqmt.apps.googleusercontent.com',
@@ -84,8 +86,38 @@ app.get('/auth/google/redirect',passport.authenticate('google', { failureRedirec
 // });
 
 
+
+
 io.on('connection', function(socket) {
-	console.log('A user has connected with ID: ' + socket.id);
+  socket.on('userAuth', function(user,pass){
+    /** creates new data or loads an existing database**/
+      db = new PouchDB("users");
+    /**gets data from specific id**/
+    /* returns information regarding the id, in this case, it would return data contained the _id of user*/
+      db.get(user).then(function(doc) {
+      console.log("found");
+      console.log(doc.password);
+      if (pass === doc.password){
+          console.log('right pass');
+          socket.emit("authentication","/home",doc);
+      }
+      }).then(function(response) {
+            
+      }).catch(function (err) {
+          socket.emit("userNotfound");
+      });
+    });
+
+  /* used for the sign up process*/
+  socket.on("newUser",function(user_info){
+      var valid = addToDatabase(user_info)
+      if (valid){
+        socket.emit("addedUser");
+      }
+      else{
+        socket.emit("userExists");
+      }
+  });
 	
 	socket.on('disconnect', function() {
 		console.log('User'  + socket.id + 'has disconnected');
@@ -93,6 +125,58 @@ io.on('connection', function(socket) {
 
 });
 
+
 http.listen(8080, function() {
 	console.log('Listening on port *8080');
 });
+
+function addToDatabase(user_info){
+  db = new PouchDB("users");
+  db.get(user_info.userId).then(function(doc) {
+      /* if a user already exists, we don't add the info to the database*/
+      console.log('user found');
+      return false;
+  }).then(function(response) {
+            
+  }).catch(function (err) {
+    //** how to add a new entry in the database **/
+    /* if a user creates a new account, we add to the database */
+      if (user_info.userType === "Employer"){
+        db.put({
+          _id: user_info.userId,
+          password: user_info.userPass,
+          email: user_info.userEmail,
+          companyName : user_info.userCompany,
+          Type : "Employee",
+          position: user_info.userPosition,
+          description: user_info.userDescription,
+          experience: user_info.userExperience,
+          profile: user_info.userProfile
+        }).then(function (response) {
+        // handle response
+        }).catch(function (err) {
+            console.log(err);
+        });
+      }
+      if (user_info.userType === "Candidate"){
+        db.put({
+          _id: user_info.userId,
+          password: user_info.userPass,
+          email: user_info.userEmail,
+          candidateFullName : user_info.userCompany,
+          userType : "Candidate",
+          education: user_info.userEducation, 
+          program: user_info.userProgram,
+          description: user_info.userDescription,
+          experience: user_info.userExperience,
+          profile: user_info.userProfile
+        }).then(function (response) {
+        // handle response
+        }).catch(function (err) {
+            console.log(err);
+        });
+      }
+  });
+
+  return true;
+}

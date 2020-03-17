@@ -22,37 +22,36 @@
 		<form class="form-horizontal" >
 			<div class = "form-group">
 				<label class="control-label col-sm-2">Create a Username</label>
-				<input type="text" name="userName" class = "employeeUserinput" id = "userName">
+				<input type="text" name="userName" class = "employerUserinput" id = "username">
 			</div>
 			<div class = "form-group">
 				<label class="control-label col-sm-2">Create a Password</label>
-				<input type="text" name="password" class = "employeeUserinput" id = "password">
+				<input type="password" name="password" class = "employerUserinput" id = "password">
 			</div>
 			<div class = "form-group">
 				<label class="control-label col-sm-2">Email</label>
-				<input type="text" name="email" class = "employeeUserinput" id = "email">
+				<input type="email" name="email" class = "employerUserinput" id = "email">
 			</div>
 			<div class = "form-group">
 				<label class="control-label col-sm-2">Company Name</label>
-				<input type="text" name="companyName" class = "employeeUserinput" id = "companyName">
+				<input type="text" name="companyName" class = "employerUserinput" id = "companyName">
 			</div>
 			<div class = "form-group">
 				<label class="control-label col-sm-2">Name of Position Offered</label>
-				<input type="text" name="position" class = "employeeUserinput" id = "position">
+				<input type="text" name="position" class = "employerUserinput" id = "position">
 			</div>
 			<div class = "form-group">
 				<label class="control-label col-sm-2">Job Description</label>
-				<textarea type="text" name="description" class =  "employeeUserinput" id = "description"></textarea>
+				<textarea type="text" name="description" class =  "employerUserinput" id = "description"></textarea>
 			</div>
 			<div class = "form-group">
 				<label class="control-label col-sm-2">Experience Required</label>
-				<textarea type="text" name="experience" class = "employeeUserinput" id = "experience"></textarea>
+				<textarea type="text" name="experience" class = "employerUserinput" id = "experience"></textarea>
 			</div>
 			<label class="control-label col-sm-2">Upload Company Photo</label>
 			<input type="file"
-	       	id="profile" name="profile" class = "employeeUserinput">
+	       	id="profile" name="profile" class = "employerUserinput">
 	       <br><br>
-			<button type="submit" class="btn btn-light" id = "login">Submit</button>
 		</form>
 	</div>
 
@@ -60,11 +59,11 @@
 		<form class="form-horizontal" >
 			<div class = "form-group">
 				<label class="control-label col-sm-2">Create a Username</label>
-				<input type="text" name="userName" class = "candidateUserinput" id = "userName">
+				<input type="text" name="userName" class = "candidateUserinput" id = "userName2">
 			</div>
 			<div class = "form-group">
 				<label class="control-label col-sm-2">Create a Password</label>
-				<input type="text" name="password" class = "candidateUserinput" id = "password">
+				<input type="text" name="password" class = "candidateUserinput" id = "password2">
 			</div>
 			<div class = "form-group">
 				<label class="control-label col-sm-2">Full Name</label>
@@ -72,33 +71,39 @@
 			</div>
 			<div class = "form-group">
 				<label class="control-label col-sm-2">Email</label>
-				<input type="text" name="email" class = "candidateUserinput" id = "email">
+				<input type="text" name="email" class = "candidateUserinput" id = "email2">
 			</div>
 			<div class = "form-group">
 				<label class="control-label col-sm-2">Highest Education Level Completed</label>
 				<div>
-				<label class="control-label col-sm-3"><input name = "education" type="radio" id = "highschool" class = "education">High School Diploma</label><br>
-        		<label class="control-label col-sm-3"><input name = "education" type="radio"  id = "bachelor" class = "education">Bachelor's Degree</label><br>
-        		<label class="control-label col-sm-3"><input name = "education" type="radio" id = "masters" class = "education">Master's Degree</label><br>
-        		<label class="control-label col-sm-2"><input name = "education" type="radio"  id = "phd" class = "education">PhD. Degree</label><br>
+				<label class="control-label col-sm-3"><input name = "education" type="radio" id = "highschool" class = "education" id = "highschool">High School Diploma</label><br>
+        		<label class="control-label col-sm-3"><input name = "education" type="radio"  id = "bachelor" class = "education" id = "bachelor">Bachelor's Degree</label><br>
+        		<label class="control-label col-sm-3"><input name = "education" type="radio" id = "masters" class = "education" id = "masters">Master's Degree</label><br>
+        		<label class="control-label col-sm-2"><input name = "education" type="radio"  id = "phd" class = "education" id = "phd">PhD. Degree</label><br>
+        		<div id = "program">
+        			<label class="control-label col-sm-2">Program</label>
+					<input type="text" name="email" class = "candidateUserinput" id = "programDescription">
+				</div>
         		</div>
 			</div>
 			<div class = "form-group">
 				<label class="control-label col-sm-2">Tell us a little about yourself</label>
-				<textarea type="text" name="description" class =  "candidateUserinput" id = "description"></textarea>
+				<textarea type="text" name="description" class =  "candidateUserinput" id = "description2"></textarea>
 			</div>
 			<div class = "form-group">
 				<label class="control-label col-sm-2">Experience (Seperate points with ",")</label>
-				<textarea type="text" name="experience" class ="candidateUserinput" id = "experience"></textarea>
+				<textarea type="text" name="experience" class ="candidateUserinput" id = "experience2"></textarea>
 			</div>
 			<label class="control-label col-sm-2">Upload Profile Picture</label>
-			<input type="file" id="profile" name="profile" class = "candidateUserinput">
+			<input type="file" id="profile2" name="profile" class = "candidateUserinput">
 	       <br><br>
-	
-			<button type="submit" class="btn btn-light" id = "login">Submit</button>
+			
 
 	</div>
-
+	<div class = "button">
+		<button class="btn btn-light" id = "submit">Submit</button>
+		<p id = "error"></p>
+	</div>
 
 	 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -106,21 +111,5 @@
      <script src="/socket.io/socket.io.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-     <script type="text/javascript">
-     	$(function(){
-
-		$("#employeecheck").click(function(){
-			$('#employee').show();
-			$('#candidate').hide();
-		});
-
-	$("#candidatecheck").click(function(){
-		$('#candidate').show();
-		$('#employee').hide();
-		});
-
-	});
-
-     </script>
-</body>
+	<script src = "/client.js"></script>
 </html>

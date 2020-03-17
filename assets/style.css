@@ -67,9 +67,16 @@
 	width: 50%;
 }
 
-.employeeUserinput{
+.employerUserinput{
 	width: 50%;
 }
 
+.button{
+	display:none;
+	text-align: center;
+}
 
+#program{
+	display: none;
+}
 
