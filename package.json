@@ -8,7 +8,7 @@
         "jade": "^1.11.0",
         "kerberos": "~0.0.17",
         "moment": "^2.24.0",
-        "mongodb": "~2.2.19",
+        "mongodb": "~3.1.13",
         "passport": "^0.4.1",
         "passport-google-oauth": "^2.0.0",
         "passport-google-oauth2": "^0.2.0",
